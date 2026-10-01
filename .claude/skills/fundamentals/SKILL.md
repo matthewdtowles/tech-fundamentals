@@ -32,27 +32,26 @@ Run it from there. Never edit `progress.json` by hand.
 
 ## Stage: learn
 
-**Teach.** Cover each bullet under "Concepts to teach", in order.
-- Teach one concept at a time: a short explanation, a tiny example (Python; add the
-  Java equivalent for concurrency topics), and its time/space complexity.
-- After each concept, ask one quick check question. Wait for the answer before moving on.
-- Connect each idea to production systems the user will recognize: caches, logs,
-  queues, schedulers.
+The lesson is a short warm-up. Most of the day's effort belongs in the problem.
+
+**Teach.** Introduce every bullet under "Concepts to teach" in ONE message.
+- Per concept: a few sentences, a tiny example only where it helps (Python; add the
+  Java equivalent for concurrency topics), complexity, and a one-line tie-in to a
+  production system (caches, logs, queues, schedulers).
+- No check questions between concepts. End by inviting questions, then start the quiz
+  when the user is ready.
 - Do NOT reveal the solution to today's problem. Teach the pattern on a different example.
 - Use headers so the user can skim back.
 
-**Quiz.** When teaching is done, give 5 questions, **one at a time**:
-1. A concept question (why does X work?)
-2. A complexity question (time and space, with justification)
-3. Predict the output or spot the bug in a short snippet
-4. Apply the pattern to a new scenario that is not today's problem
-5. A trade-off question (when would you NOT use this?)
+**Quiz.** 2 questions, **one at a time**, neither of them today's problem:
+1. A concept or complexity question
+2. Apply the pattern to a new scenario, or spot the bug in a short snippet
 
 Grading:
 - Grade strictly. The answer counts if the core idea is right. Missing the key insight = wrong.
 - After each answer, say correct or incorrect in one line and give the right answer briefly.
-- After question 5, run `./tf quiz <correct>/5`.
-- If they fail: re-teach only the missed concepts, then give a NEW set of 5 questions.
+- After question 2, run `./tf quiz <correct>/2`.
+- If they fail: re-explain only the missed concept, then give 2 NEW questions.
   Never repeat a question.
 
 ## Stage: discuss

@@ -11,8 +11,8 @@ In Claude Code, from this directory:
 /fundamentals
 ```
 
-Claude teaches the topic, quizzes you (you need 4/5 to move on), and discusses your
-approach. Then you solve a Python file whose tests and goal runtime are at the top.
+Claude briefly introduces the topic, quizzes you (you need 2/2 to move on), and discusses
+your approach. Then you solve a Python file whose tests and goal runtime are at the top.
 
 ## CLI
 
