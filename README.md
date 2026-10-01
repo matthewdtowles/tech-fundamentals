@@ -1,6 +1,6 @@
 # Tech Fundamentals
 
-83 days, one problem per day: algorithms, concurrency, system design, behavioral.
+42 days, one problem per day: algorithms, concurrency, system design, behavioral.
 Each day goes **learn → quiz → discuss → solve**, and you cannot skip ahead.
 
 ## Start
@@ -22,7 +22,7 @@ Requires [uv](https://docs.astral.sh/uv/). It runs on Python 3.10+ automatically
 ./tf status      # where am I
 ./tf show        # today's brief
 ./tf check       # run my tests; passing completes the day
-./tf list        # all 83 days
+./tf list        # all 42 days
 ```
 
 - Progress: `~/.tech-fundamentals/progress.json` (override with `TECH_FUNDAMENTALS_HOME`)
@@ -33,23 +33,21 @@ Requires [uv](https://docs.astral.sh/uv/). It runs on Python 3.10+ automatically
 
 | # | Module | Days |
 |---|---|---|
-| 1 | Hashing & Arrays | 1–5 |
-| 2 | Two Pointers & Sliding Window | 6–10 |
-| 3 | Binary Search | 11–14 |
-| 4 | Linked Lists & Caches | 15–18 |
-| 5 | Heaps & Scheduling | 19–23 |
-| 6 | Stacks & Parsing | 24–29 |
-| 7 | Intervals | 30–32 |
-| 8 | Trees | 33–37 |
-| 9 | Backtracking | 38–40 |
-| 10 | Tries | 41–42 |
-| 11 | Graphs | 43–50 |
-| 12 | Dynamic Programming & Greedy | 51–58 |
-| 13 | Rate Limiting & Streams | 59–61 |
-| 14 | Concurrency | 62–69 |
-| 15 | Mock Interviews | 70–72 |
-| 16 | System Design | 73–77 |
-| 17 | Behavioral & Readiness | 78–83 |
+| 1 | Hashing & Arrays | 1–2 |
+| 2 | Two Pointers & Sliding Window | 3–4 |
+| 3 | Binary Search | 5–6 |
+| 4 | Linked Lists & Caches | 7–8 |
+| 5 | Heaps & Scheduling | 9–10 |
+| 6 | Stacks & Parsing | 11–14 |
+| 7 | Intervals | 15–16 |
+| 8 | Trees | 17–18 |
+| 9 | Graphs | 19–22 |
+| 10 | Dynamic Programming | 23 |
+| 11 | Rate Limiting & Streams | 24–25 |
+| 12 | Concurrency | 26–32 |
+| 13 | Mock Interviews | 33–34 |
+| 14 | System Design | 35–37 |
+| 15 | Behavioral & Readiness | 38–42 |
 
 ## Development
 

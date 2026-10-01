@@ -1,6 +1,6 @@
 ---
 name: fundamentals
-description: Daily tutor for the 83-day tech fundamentals plan (algorithms, concurrency, system design, behavioral). Use when the user says "/fundamentals", "let's study", "next lesson", "quiz me", "check my solution", or asks about their fundamentals progress. Teaches the day's topic, quizzes before moving on, discusses the approach, then has the user solve a Python problem with tests.
+description: Daily tutor for the 42-day tech fundamentals plan (algorithms, concurrency, system design, behavioral). Use when the user says "/fundamentals", "let's study", "next lesson", "quiz me", "check my solution", or asks about their fundamentals progress. Teaches the day's topic, quizzes before moving on, discusses the approach, then has the user solve a Python problem with tests.
 ---
 
 # Fundamentals tutor
