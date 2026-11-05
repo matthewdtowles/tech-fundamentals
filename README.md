@@ -23,9 +23,10 @@ Requires [uv](https://docs.astral.sh/uv/). It runs on Python 3.10+ automatically
 ./tf show        # today's brief
 ./tf check       # run my tests; passing completes the day
 ./tf list        # all 42 days
+./tf skip --reason "done on matt-box"   # already did today elsewhere
 ```
 
-- Progress: `~/.tech-fundamentals/progress.json` (override with `TECH_FUNDAMENTALS_HOME`)
+- Progress: `progress.json` in the repo, so it syncs across machines. Pull before a session, commit and push after. Override the directory with `TECH_FUNDAMENTALS_HOME`.
 - Your work: `workspace/`
 - Content: `curriculum/problems/` (statements + tests), `curriculum/solutions/` (unlocked after you finish a day)
 

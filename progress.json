@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "current_day": 2,
+  "days": {
+    "1": {
+      "stage": "done",
+      "quiz_attempts": 0,
+      "completed_at": "2026-11-04T19:59:57",
+      "skip_reason": "Completed on matt-box (Linux desktop)"
+    },
+    "2": {
+      "stage": "learn",
+      "quiz_attempts": 0
+    }
+  }
+}

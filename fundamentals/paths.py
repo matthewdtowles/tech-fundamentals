@@ -16,7 +16,8 @@ class Paths:
 
     @classmethod
     def default(cls):
-        home = Path(os.environ.get("TECH_FUNDAMENTALS_HOME", "~/.tech-fundamentals")).expanduser()
+        # Progress is committed with the repo so it syncs across machines via git.
+        home = Path(os.environ.get("TECH_FUNDAMENTALS_HOME", ROOT)).expanduser()
         return cls(curriculum=ROOT / "curriculum", workspace=ROOT / "workspace", progress_file=home / "progress.json")
 
     def template(self, day):
