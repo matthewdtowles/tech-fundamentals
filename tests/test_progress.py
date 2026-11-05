@@ -69,6 +69,26 @@ class ProgressTest(unittest.TestCase):
         progress.record_completion(self.state, "t2", total_days=3)
         self.assertTrue(progress.is_done(self.state, 1))
 
+    def test_skip_from_any_stage_marks_done_with_reason(self):
+        progress.record_quiz(self.state, 5, 5, "t0")
+        progress.record_skip(self.state, "  Done on matt-box  ", "t1", total_days=3)
+        record = self.state["days"]["1"]
+        self.assertEqual(record["stage"], "done")
+        self.assertEqual(record["skip_reason"], "Done on matt-box")
+        self.assertEqual(record["completed_at"], "t1")
+        self.assertEqual(self.state["current_day"], 2)
+        self.assertEqual(progress.stage(self.state), "learn")
+
+    def test_skip_requires_reason(self):
+        with self.assertRaises(ValueError):
+            progress.record_skip(self.state, "   ", "t0", total_days=3)
+        self.assertEqual(progress.stage(self.state), "learn")
+
+    def test_cannot_skip_after_plan_finished(self):
+        self.state["current_day"] = 4
+        with self.assertRaises(StageError):
+            progress.record_skip(self.state, "done elsewhere", "t0", total_days=3)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -67,6 +67,15 @@ class CliFlowTest(unittest.TestCase):
         self.run_cli("discussed")
         self.assertEqual(self.run_cli("complete")[0], 1)
 
+    def test_skip_completes_day_and_unlocks_solution(self):
+        with self.assertRaises(SystemExit, msg="reason is required"):
+            self.run_cli("skip")
+        code, out = self.run_cli("skip", "--reason", "Completed on matt-box")
+        self.assertEqual(code, 0, out)
+        self.assertIn("Completed on matt-box", out)
+        self.assertIn("Day 2", self.run_cli("status")[1])
+        self.assertEqual(self.run_cli("solution", "1")[0], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

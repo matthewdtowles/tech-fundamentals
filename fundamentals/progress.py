@@ -53,6 +53,20 @@ def record_discussion(state, notes, now):
 def record_completion(state, now, total_days):
     _require(state, "solve")
     current(state).update(stage="done", completed_at=now)
+    _advance(state, total_days)
+
+
+def record_skip(state, reason, now, total_days):
+    """Mark the current day done without the gates, e.g. when it was completed on another machine."""
+    if is_finished(state, total_days):
+        raise StageError("All days are already complete.")
+    if not reason.strip():
+        raise ValueError("A reason is required to skip a day.")
+    current(state).update(stage="done", completed_at=now, skip_reason=reason.strip())
+    _advance(state, total_days)
+
+
+def _advance(state, total_days):
     state["current_day"] += 1
     if not is_finished(state, total_days):
         current(state)

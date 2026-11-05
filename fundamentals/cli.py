@@ -162,6 +162,16 @@ def cmd_complete(args, state, paths):
     return 0
 
 
+def cmd_skip(args, state, paths):
+    day = curriculum.get(state["current_day"])
+    progress.record_skip(state, args.reason, now(), len(DAYS))
+    paths.save_state(state)
+    print(f"Day {day.n} skipped: {day.title}. Reason: {args.reason.strip()}")
+    if not progress.is_finished(state, len(DAYS)):
+        print(f"Next: Day {state['current_day']} — {curriculum.get(state['current_day']).title}")
+    return 0
+
+
 def cmd_solution(args, state, paths):
     day = curriculum.get(args.day or state["current_day"])
     if not progress.is_done(state, day.n):
@@ -189,6 +199,9 @@ def parser():
     sub.add_parser("scaffold", help="Recreate a missing workspace file").set_defaults(fn=cmd_scaffold)
     sub.add_parser("check", help="Run tests; passing completes the day").set_defaults(fn=cmd_check)
     sub.add_parser("complete", help="Complete a written day after review").set_defaults(fn=cmd_complete)
+    skip = sub.add_parser("skip", help="Mark today done without the gates, with a reason (e.g. done on another machine)")
+    skip.add_argument("--reason", required=True)
+    skip.set_defaults(fn=cmd_skip)
     solution = sub.add_parser("solution", help="Show the reference solution (only after completing)")
     solution.add_argument("day", nargs="?", type=int)
     solution.set_defaults(fn=cmd_solution)
