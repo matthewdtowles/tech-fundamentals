@@ -9,8 +9,10 @@
       "skip_reason": "Completed on matt-box (Linux desktop)"
     },
     "2": {
-      "stage": "learn",
-      "quiz_attempts": 0
+      "stage": "discuss",
+      "quiz_attempts": 2,
+      "quiz_score": "2/2",
+      "quiz_passed_at": "2026-11-04T21:18:44"
     }
   }
 }
